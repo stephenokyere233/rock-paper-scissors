@@ -1,0 +1,180 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ .wrapper {
+     height: 100vh;
+ }
+
+ :root {
+     --brand: blueviolet;
+     --card: rgb(243, 244, 246);
+     --text: #222;
+ }
+
+ body {
+     text-transform: capitalize;
+     color: var(--text);
+     background: var(--brand);
+     overflow: hidden;
+    font-family: 'DynaPuff', cursive;
+ }
+
+ header {
+     letter-spacing: 0.15em;
+     text-align: center;
+     margin: 30px 0;
+ }
+
+ .card {
+    box-shadow: 0 0 10px;
+     background: var(--card);
+     padding: 20px;
+     font-size: 20px;
+     border-radius: 20px;
+     line-height: 2em;
+     height: 250px;
+     display: flex;
+     flex-direction: column;
+     width: 400px;
+     text-align: center;
+ }
+
+  img {
+     height: 80px;
+      border-radius: 10px;
+     transition: 300ms;
+     border: 1px solid rgb(195, 204, 195);
+ }
+
+ .player img:hover {
+     background: rgb(210, 205, 205);
+     border-radius: 20px;
+     padding: 10px;
+     cursor:pointer;
+ }
+
+ span {
+     padding: 5px;
+ }
+
+ .cardholder {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     width: 80%;
+     margin: auto;
+ }
+
+ .btn {
+     height: 200px;
+     display: flex;
+     align-items: center;
+
+     justify-content: space-evenly;
+ }
+
+ #player-selection ,#pc-selection,#selection-text{
+     font-size: 22px;
+     font-weight: normal;
+     text-transform: capitalize;
+     
+ }
+
+ .vsStyle {
+     /* border: 1px solid; */
+     box-shadow: 0 0 10px ;
+     margin: 10px;
+     
+     font-size: 18px;
+    
+ }
+ #reset{
+    width: 120px;
+        padding: 5px;
+        text-align: center;
+        border-radius: 9999px;
+        background: var(--card);
+        color: var(--brand);
+        font-size: 18px;
+        
+
+ }
+ .divreset{
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+        align-items: center;
+        cursor:pointer;
+ }
+ #vs{
+     width: 200px;
+     padding: 10px;
+    text-align: center;
+    border-radius: 9999px;
+    background: var(--card);
+        color: var(--brand);
+  
+ }
+ .textStyle{
+   font-size: 20px;
+   display: flex;
+   overflow-wrap: break-word;
+   text-align: center;
+   justify-content: center;
+ }
+ .hide{
+    display: none;
+ }
+
+ #player-score,
+ #pc-score {
+     font-size: 30px;
+     font-weight: bold;
+ }
+
+ @media screen and (max-width: 900px) {
+     .card {
+         width: 70%;
+         height: 320px;
+         margin: 30px 0;
+     }
+
+     body {
+         overflow-y: scroll;
+     }
+     img{
+        height: 90px;
+     }
+
+     .cardholder {
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+
+         align-items: center;
+     }
+          .divreset {
+              margin-top: 0;
+          }
+ }
+
+ @media screen and (max-width: 480px) {
+     .card {
+         width: 90%;
+         height: 270px;
+     }
+
+     body {
+         overflow-y: scroll;
+     }
+
+     .cardholder {
+         width: 100%;
+     }
+     header h1{
+       font-size: 28px;
+     }
+ }

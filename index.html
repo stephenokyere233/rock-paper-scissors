@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@600&family=Sora&family=Source+Sans+Pro:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>rock-paper-scissors!</h1>
+        <h2 class="round">start a round!</h2>
+      </header>
+      <div class="cardholder">
+        <!-- player card -->
+        <div class="card">
+          <h2 class="player-name">Player One</h2>
+          <!-- rps btn -->
+          <div class="btn player">
+            <img class="Rock" src="rock.png" alt="" />
+            <img class="Paper" src="paper.png" alt="" />
+            <img class="Scissors" src="sci.png" alt="" />
+          </div>
+          <p id="player-selection">choose your fate😂</p>
+          <p id="player-score">0</p>
+        </div>
+
+        <div>
+          <h1 id="vs" class="vsStyle textStyle">Vs</h1>
+        </div>
+
+        <!-- computer card -->
+        <div class="card">
+          <h2 class="pc-name">Computer</h2>
+
+          <!-- rps btn -->
+          <div class="btn pc">
+            <p id="pc-selection">go on and select!</p>
+          </div>
+          <p id="selection-text">ladies first😂</p>
+          <p id="pc-score">0</p>
+        </div>
+          
+      </div> 
+        <div class="divreset">
+          <h1 id="reset" class="reset">Reset</h1>
+        </div>
+      <!-- end -->
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
