@@ -54,17 +54,14 @@ document.addEventListener("click", (e) => {
   }
 });
 let round = 1;
-const roundCount = (e) => {
-  if (
-    e.target.classList.contains("reset") &&
-   roundBoolean===true
-  ) {
-    console.log('isisisffskfb');
-    round++;
-    startRound.innerHTML = `Round ${round}`;
-  }
+const roundCount = () => {
   startRound.innerHTML = `Round ${round}`;
 };
+reset.addEventListener("click", ()=>{
+  if (playerScore === 10 || computerScore === 10) {
+    round++;
+  }
+});
 document.addEventListener("click", roundCount);
 document.addEventListener("click", () => {
   if (playerScore === 10 || computerScore === 10) {
