@@ -83,7 +83,6 @@ const startOver = () => {
     btnBox.textContent = "";
     playerSelection.innerHTML = "One more time!";
     let arr = ["Rock", "Paper", "Scissors"];
-    // let newArr = ["r", "p", "s"];
     let src = ["rock.png", "paper.png", "sci.png"];
     let img;
 
@@ -93,15 +92,16 @@ const startOver = () => {
       img.setAttribute("src", src[i]);
       btnBox.appendChild(img);
     }
-    // round++;
-    // reset.addEventListener("click", roundCount);
+  
     computerScore === 10
       ? (pcSelection.innerHTML = `Okay, I can beat you once more🤣`)
       : (pcSelection.innerHTML = `You wanna go again?🙄`);
 
     btnBox.addEventListener("click", whatIsClicked);
     btnBox.addEventListener("click", computerCard);
+    btnBox.addEventListener("click", rpsLogic);
   }
+  console.log(player);
 
   vs.innerHTML = "Vs";
   playerScore = 0;
@@ -203,13 +203,13 @@ const rpsLogic = (e) => {
 
     vs.classList.add("textStyle");
     vs.classList.remove("vsStyle");
-
-    console.log(`counter ${counter}`);
-    // console.log(`tie counter ${tieCount}`);
   }
 };
+rock.addEventListener("click", rpsLogic);
+paper.addEventListener("click", rpsLogic);
+scissors.addEventListener("click", rpsLogic);
 
-btnBox.addEventListener("click", rpsLogic);
+// btnBox.addEventListener("click", rpsLogic);
 
 // const showfunc = (e) => {
 //   if (player === 1) {
@@ -238,9 +238,7 @@ btnBox.addEventListener("click", rpsLogic);
 //   }, 1500);
 // };
 
-// rock.addEventListener("click", showfunc);
-// paper.addEventListener("click", showfunc);
-// scissors.addEventListener("click", showfunc);
+
 
 // const newFunc=(e)=>{
 // if (player === 1) {
