@@ -214,36 +214,36 @@ const rpsLogic = (e) => {
 
 btnBox.addEventListener("click", rpsLogic);
 
-const showfunc = (e) => {
-  if (player === 1) {
-    paper.classList.add("hide");
-    scissors.classList.add("hide");
-  } else if (player === 2) {
-    rock.classList.add("hide");
-    scissors.classList.add("hide");
-  } else if (player === 3) {
-    paper.classList.add("hide");
-    rock.classList.add("hide");
-  } else if (e.target.classList.contains("btn")) {
-    paper.classList.remove("hide");
-    scissors.classList.remove("hide");
-    rock.classList.remove("hide");
-  } else {
-    paper.classList.remove("hide");
-    scissors.classList.remove("hide");
-    rock.classList.remove("hide");
-  }
+// const showfunc = (e) => {
+//   if (player === 1) {
+//     paper.classList.add("hide");
+//     scissors.classList.add("hide");
+//   } else if (player === 2) {
+//     rock.classList.add("hide");
+//     scissors.classList.add("hide");
+//   } else if (player === 3) {
+//     paper.classList.add("hide");
+//     rock.classList.add("hide");
+//   } else if (e.target.classList.contains("btn")) {
+//     paper.classList.remove("hide");
+//     scissors.classList.remove("hide");
+//     rock.classList.remove("hide");
+//   } else {
+//     paper.classList.remove("hide");
+//     scissors.classList.remove("hide");
+//     rock.classList.remove("hide");
+//   }
 
-  setTimeout(() => {
-    paper.classList.remove("hide");
-    scissors.classList.remove("hide");
-    rock.classList.remove("hide");
-  }, 1500);
-};
+//   setTimeout(() => {
+//     paper.classList.remove("hide");
+//     scissors.classList.remove("hide");
+//     rock.classList.remove("hide");
+//   }, 1500);
+// };
 
-rock.addEventListener("click", showfunc);
-paper.addEventListener("click", showfunc);
-scissors.addEventListener("click", showfunc);
+// rock.addEventListener("click", showfunc);
+// paper.addEventListener("click", showfunc);
+// scissors.addEventListener("click", showfunc);
 
 // const newFunc=(e)=>{
 // if (player === 1) {
