@@ -165,14 +165,14 @@
  @media screen and (max-width: 480px) {
      .card {
          width: 90%;
-         height: 220px;
+         height: 245px;
      }
 
      body {
          overflow-y: scroll;
      }
      img{
-        height: 60px;
+        height: 65px;
      }
 
      .cardholder {
