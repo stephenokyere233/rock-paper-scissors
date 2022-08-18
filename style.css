@@ -104,7 +104,8 @@
  }
  .divreset{
     display: flex;
-    margin-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 30px ;
     justify-content: center;
         align-items: center;
         cursor:pointer;
@@ -164,11 +165,14 @@
  @media screen and (max-width: 480px) {
      .card {
          width: 90%;
-         height: 270px;
+         height: 220px;
      }
 
      body {
          overflow-y: scroll;
+     }
+     img{
+        height: 60px;
      }
 
      .cardholder {
@@ -178,3 +182,37 @@
        font-size: 28px;
      }
  }
+  @media screen and (max-width: 360px) {
+      .card {
+          width: 90%;
+          height: 200px;
+            font-size: 16px;
+      }
+         #player-selection,
+         #pc-selection,
+         #selection-text {
+             font-size: 16px;
+        
+    
+         }
+         header {
+            margin: 10px 2px;
+         }
+
+      body {
+          overflow-y: scroll;
+      }
+
+      .cardholder {
+          width: 100%;
+        
+      }
+      img{
+        height:60px;
+        width: 70px;
+      }
+
+      header h1 {
+          font-size: 28px;
+      }
+  }
