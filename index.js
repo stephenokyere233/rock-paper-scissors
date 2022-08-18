@@ -5,27 +5,20 @@ let playerSelection = document.querySelector("#player-selection");
 let btnBox = document.querySelector(".btn");
 let pcSelection = document.querySelector("#pc-selection");
 let selectText = document.querySelector("#selection-text");
-let player = 0;
-let computer = 0;
 let vs = document.querySelector("#vs");
 let pScore = document.querySelector("#player-score");
 let cScore = document.querySelector("#pc-score");
 let playerName = document.querySelector(".player-name");
 let pcName = document.querySelector(".pc-name");
 let startRound = document.querySelector(".round");
-// let playerScreen = document.querySelector(".player");
-let pcScreen = document.querySelector(".pc");
 let reset = document.querySelector(".reset");
 let roundBoolean;
 let computerScore = 0;
 let playerScore = 0;
 let counter = 0;
+let player = 0;
+let computer = 0;
 let pcChoice;
-let btnpc = document.querySelector("#btnpc");
-// let checkMe;
-// if(playerScore){
-
-// }
 
 playerScore === 10 || computerScore === 10
   ? (roundBoolean = true)
@@ -60,85 +53,67 @@ document.addEventListener("click", (e) => {
     vs.textContent = "Vs";
   }
 });
-const startOver = () => {
-  console.log("reset pressed");
-  playerName.innerHTML = "Player One";
-  pcName.innerHTML = "Computer";
+let round = 1;
+const roundCount = (e) => {
+  if (
+    e.target.classList.contains("reset") &&
+   roundBoolean===true
+  ) {
+    console.log('isisisffskfb');
+    round++;
+    startRound.innerHTML = `Round ${round}`;
+  }
+  startRound.innerHTML = `Round ${round}`;
+};
+document.addEventListener("click", roundCount);
+document.addEventListener("click", () => {
+  if (playerScore === 10 || computerScore === 10) {
+    reset.innerHTML = "Play Again";
+  } else {
+    reset.innerHTML = "Reset";
+  }
+});
 
+const startOver = () => {
   if (playerScore < 10 && computerScore < 10) {
-    playerScore = 0;
-    computerScore = 0;
     pcSelection.innerHTML = `A reset?🤣`;
     selectText.innerHTML = "";
     playerSelection.innerHTML = `Let's start over...`;
-    console.log("first condition");
   } else if (
     (playerScore === 10 && computerScore < 10) ||
     (playerScore < 10 && computerScore === 10)
   ) {
-    // rock.addEventListener("click", whatIsClicked);
-    // paper.addEventListener("click", whatIsClicked);
-    // scissors.addEventListener("click", whatIsClicked);
-    // document.addEventListener("click", WinOrLoose);
-    // rock.addEventListener("click", computerCard);
-    // paper.addEventListener("click", computerCard);
-    // scissors.addEventListener("click", computerCard);
-    // rock.addEventListener("click", showfunc);
-    // paper.addEventListener("click", showfunc);
-    // scissors.addEventListener("click", showfunc);
-    // btnBox.addEventListener("click", rpsLogic);
-
     btnBox.textContent = "";
-
     playerSelection.innerHTML = "One more time!";
-    pcSelection.innerHTML = `Okay I can beat you once more`;
-
     let arr = ["Rock", "Paper", "Scissors"];
+    // let newArr = ["r", "p", "s"];
     let src = ["rock.png", "paper.png", "sci.png"];
     let img;
-    playerScore = 0;
-    computerScore = 0;
 
     for (let i = 0; i < arr.length; i++) {
       img = document.createElement("img");
       img.classList.add(arr[i]);
       img.setAttribute("src", src[i]);
-
-      console.log(img);
       btnBox.appendChild(img);
-      //  btnBox.innerHTML=img;
     }
-    // btnBox = "";
+    // round++;
+    // reset.addEventListener("click", roundCount);
+    computerScore === 10
+      ? (pcSelection.innerHTML = `Okay, I can beat you once more🤣`)
+      : (pcSelection.innerHTML = `You wanna go again?🙄`);
+
+    btnBox.addEventListener("click", whatIsClicked);
+    btnBox.addEventListener("click", computerCard);
   }
-  // let rock1=document.querySelector('.rock1');
-  //  let paper1=document.querySelector('.paper1');
-  //   let sci1=document.querySelector('.scissors1');
-  //   rock1.addEventListener('click',whatIsClicked);
-  //  paper1.addEventListener("click", whatIsClicked);
-  //   sci1.addEventListener('click',whatIsClicked);
-  // rock1.addEventListener("click", computerCard);
-  // paper1.addEventListener("click", computerCard);
-  // sci1.addEventListener("click", computerCard);
-  btnBox.addEventListener("click", whatIsClicked);
-  // rock.addEventListener("click", computerCard);
-  // paper.addEventListener("click", computerCard);
-  // scissors.addEventListener("click", computerCard);
-   pcSelection.innerHTML = 'You wanna go again?';
-  btnBox.addEventListener("click", computerCard);
-  btnBox.addEventListener('click',showfunc);
-  // pcSelection.innerHTML = `Okay I can beat you once more`;
-  // selectText.innerHTML='abs';
-  
 
-  // rock1.addEventListener('click',()=>{
-  //   console.log('rock 1 clicked');
-  // });
-
-  console.log("second condition");
+  vs.innerHTML = "Vs";
+  playerScore = 0;
+  computerScore = 0;
+  playerName.innerHTML = "Player One";
+  pcName.innerHTML = "Computer";
 };
 
 reset.addEventListener("click", startOver);
-// reset.addEventListener('click',computerCard);
 
 // this should check who wins
 const WinOrLoose = () => {
@@ -188,8 +163,6 @@ const computerCard = () => {
 rock.addEventListener("click", computerCard);
 paper.addEventListener("click", computerCard);
 scissors.addEventListener("click", computerCard);
-// btnBox.addEventListener("click", computerCard);
-// let tieCount=0;
 
 const rpsLogic = (e) => {
   let playerName = ["Player One", "Computer"];
@@ -202,8 +175,6 @@ const rpsLogic = (e) => {
     ) {
       vs.innerHTML = `it's a tie`;
       counter++;
-
-      // tieCount++;
     } else if (e.target.classList.contains("btn")) {
       playerScore = playerScore;
       computerScore = computerScore;
@@ -241,9 +212,6 @@ const rpsLogic = (e) => {
   }
 };
 
-// rock.addEventListener("click", rpsLogic);
-// paper.addEventListener("click", rpsLogic);
-// scissors.addEventListener("click", rpsLogic);
 btnBox.addEventListener("click", rpsLogic);
 
 const showfunc = (e) => {
@@ -276,28 +244,37 @@ const showfunc = (e) => {
 rock.addEventListener("click", showfunc);
 paper.addEventListener("click", showfunc);
 scissors.addEventListener("click", showfunc);
-// btnBox.addEventListener("click", showfunc);
 
-// const calcScore=()=>{
-//   if(roundBoolean===false && rpsLogic){
-
-//   }
+// const newFunc=(e)=>{
+// if (player === 1) {
+//   paper1.classList.add("hide");
+//   sci1.classList.add("hide");
+// } else if (player === 2) {
+//   rock1.classList.add("hide");
+//   sci1.classList.add("hide");
+// } else if (player === 3) {
+//   paper1.classList.add("hide");
+//   rock1.classList.add("hide");
+// } else if (e.target.classList.contains("btn")) {
+//   paper1.classList.remove("hide");
+//   sci1.classList.remove("hide");
+//   rock.classList.remove("hide");
+// } else {
+//   paper1.classList.remove("hide");
+//   sci1.classList.remove("hide");
+//   rock1.classList.remove("hide");
 // }
-const roundCounter = (e) => {
-  let round = 1;
-  if (roundBoolean === true && e.target.classList.contains("reset")) {
-    round++;
-    console.log(`round ${round}`);
-  }
 
-  startRound.innerHTML = `Round ${round}`;
-};
-btnBox.addEventListener("click", roundCounter);
-reset.addEventListener("click", roundCounter);
+// setTimeout(() => {
+//   paper1.classList.remove("hide");
+//   sci1.classList.remove("hide");
+//   rock1.classList.remove("hide");
+// }, 1500);
 
-// btnBox.addEventListener('click',startOver)
-// reset.addEventListener('click',whatIsClicked);
-// reset.addEventListener("click", computerCard);
+// }
 
-// reset.addEventListener('click',showfunc);
-// reset.addEventListener("click", startOver);
+//   rock1.addEventListener('click',newFunc);
+//  paper1.addEventListener("click",newFunc);
+//   sci1.addEventListener('click',newFunc);
+
+// pcSelection.innerHTML = `Okay I can beat you once more`;
