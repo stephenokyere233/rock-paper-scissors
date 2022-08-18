@@ -119,16 +119,16 @@ const WinOrLoose = () => {
   if (playerScore === 10) {
     playerName.textContent = "*Winner!";
     pcName.textContent = "*Loser!";
-    btnBox.innerHTML = "Someone brought their winning shoes";
-    pcSelection.innerHTML = "Where's your luck?";
+    btnBox.innerHTML = "Someone brought their winning shoes!🎉";
+    pcSelection.innerHTML = "Where's your luck?!😩";
     playerSelection.innerHTML = "";
     selectText.innerHTML = "";
-    vs.innerHTML = "<h2>Game Over!</h2>";
+    vs.innerHTML = "Game Over!";
   } else if (computerScore === 10) {
     pcName.textContent = "*Winner!";
     playerName.textContent = "*Loser!";
-    pcSelection.innerHTML = "Someone brought their winning shoes";
-    btnBox.innerHTML = "Where's your luck?";
+    pcSelection.innerHTML = "Someone brought their winning shoes!🎉";
+    btnBox.innerHTML = "Where's your luck?!😩";
     playerSelection.innerHTML = "";
     selectText.innerHTML = "";
   }
